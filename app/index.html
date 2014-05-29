@@ -11,18 +11,13 @@
   <link rel="stylesheet" href="css/app.css"/>
   <script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
 </head>
-<body ng-controller="ArticleGroupCtrl">
-  <ul class="menu">
-    <li><a href="#/view1">view1</a></li>
-    <li><a href="#/view2">view2</a></li>
-  </ul>
-
+<body ng-controller="ArticleGroupsCtrl">
   <ul class="menu">
     <li ng-repeat="group in articleGroups">   
-      <a>{{group.name.sv}}</a>
+      <a href="#/article-group/{{group.uid}}">{{group.name.sv}}</a>
     </li>
   </ul>
-  
+
   <div ng-view></div>
 
   <script src="bower_components/angular/angular.js"></script>

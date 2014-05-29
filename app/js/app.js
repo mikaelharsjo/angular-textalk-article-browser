@@ -10,7 +10,8 @@ angular.module('myApp', [
   'myApp.controllers'
 ]).
 config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/view1', {templateUrl: 'partials/partial1.html', controller: 'MyCtrl1'});
-  $routeProvider.when('/view2', {templateUrl: 'partials/partial2.html', controller: 'MyCtrl2'});
+  $routeProvider.when('/view1', {templateUrl: 'partials/partial1.html', controller: 'StartCtrl'});
+  $routeProvider.when('/article-group/:uid', {templateUrl: 'partials/article-group.html', controller: 'ArticleGroupCtrl'});
+  $routeProvider.when('/article/:uid', {templateUrl: 'partials/article.html', controller: 'Article'});
   $routeProvider.otherwise({redirectTo: '/view1'});
 }]);
