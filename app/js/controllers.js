@@ -9,19 +9,19 @@ angular.module('myApp.controllers', [])
   }])
 
   .controller('ArticleGroupsCtrl', ['$scope', function($scope) {
-  	$scope.articleGroups = []
+    $scope.articleGroups = []
     var articleGroupFetched = function(group) {
-    	$scope.$apply(function(){
-    		$scope.articleGroups.push(group);
-    	});
+      $scope.$apply(function(){
+        $scope.articleGroups.push(group);
+      });
     }
     var articleGroupIdsFetched = function(ids) {
       angular.forEach(ids, function(groupId) {
-        client.call('Articlegroup.get', [groupId], articleGroupFetched);	
+        client.call('Articlegroup.get', [groupId], articleGroupFetched);  
       }); 
     }
 
-    client.call('Assortment.getArticlegroupUids', [], articleGroupIdsFetched); 	
+    client.call('Assortment.getArticlegroupUids', [], articleGroupIdsFetched);  
   }])
 
   .controller('ArticleGroupCtrl', ['$scope', '$routeParams', function($scope, $routeParams) {
@@ -39,9 +39,9 @@ angular.module('myApp.controllers', [])
     ]
 
     angular.forEach(articles, function(article){
-    	if (article.articleGroupUid == $scope.articleGroupUid) {
-    		$scope.articles.push(article);
-    	}
+      if (article.articleGroupUid == $scope.articleGroupUid) {
+        $scope.articles.push(article);
+      }
     })
   }]);
 
